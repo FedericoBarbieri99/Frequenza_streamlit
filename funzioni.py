@@ -5,8 +5,6 @@ import pandas as pd
 from stop_words import get_stop_words
 
 
-
-
 def formatString(string):
     return re.sub("[^a-z]", " ", unicodedata.normalize('NFD', string.decode("utf-8")).encode('ascii', 'ignore').decode("utf-8").lower())
 
