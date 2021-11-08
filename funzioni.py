@@ -8,7 +8,7 @@ from stop_words import get_stop_words
 
 
 def formatString(string):
-    return re.sub("[^A-Z]", " ", unicodedata.normalize('NFD', string.decode("utf-8")).encode('ascii', 'ignore').decode("utf-8").upper())
+    return re.sub("[^a-z]", " ", unicodedata.normalize('NFD', string.decode("utf-8")).encode('ascii', 'ignore').decode("utf-8").lower())
 
 
 def orderDict(dict):
@@ -22,6 +22,7 @@ def orderDict(dict):
 def countWords( file):
     dict = {}
     stopWords = get_stop_words('it')
+    print(stopWords)
     for line in file:
         line = formatString(line)
         for word in line.split():
