@@ -31,7 +31,7 @@ def countWords( file):
     return orderDict(dict)
 
 def createGraph(dict,num):
-    the_dict = pd.DataFrame({"Frequenza": [dict[item] for item in dict][:num], "Parole": [item for item in dict][:num]})
-    fig = alt.Chart(the_dict).mark_bar().encode(x=alt.X("Parole", sort=[item for item in dict][:num]), y="Frequenza")
+    plotDict = pd.DataFrame({"Frequenza": [dict[item] for item in dict][:num], "Parole": [item for item in dict][:num]})
+    fig = alt.Chart(plotDict).mark_bar().encode(x=alt.X("Parole", sort=[item for item in dict][:num]), y="Frequenza")
 
     return fig
