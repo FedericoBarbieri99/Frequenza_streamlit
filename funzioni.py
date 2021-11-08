@@ -22,7 +22,6 @@ def orderDict(dict):
 def countWords( file):
     dict = {}
     stopWords = get_stop_words('it')
-    print(stopWords)
     for line in file:
         line = formatString(line)
         for word in line.split():
